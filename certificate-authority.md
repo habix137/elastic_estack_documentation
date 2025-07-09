@@ -218,14 +218,14 @@ xpack.security.http.ssl:
   enabled: true
   verification_mode: certificate
   keystore.path: certs/master-worker1.p12
-  keystore.password: "Necessary87215"
+  keystore.password: "****"
   certificate_authorities: [ "/home/konect/els1/config/certs/ca-cert.pem" ]
 # Enable encryption and mutual authentication between cluster nodes
 xpack.security.transport.ssl:
   enabled: true
   verification_mode: certificate
   keystore.path: certs/master-worker1.p12
-  keystore.password: "Necessary87215"
+  keystore.password: "****"
   certificate_authorities: [ "/home/konect/els1/config/certs/ca-cert.pem" ]
 ```
 
