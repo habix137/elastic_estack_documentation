@@ -209,6 +209,25 @@ For `master-worker1`:
 ```bash
 openssl pkcs12 -export     -in certs/master-worker1.crt     -inkey private/master-worker1.key     -certfile ca-cert.pem     -out certs/master-worker1.p12     -name "master-worker1-cert"
 ```
+in elastic directory like /home/$user/els1/config/elasticsearch.yml put your certifacate path and password 
+```bash
+xpack.security.enabled: true
+xpack.security.enrollment.enabled: true
+# Enable encryption for HTTP API client connections, such as Kibana, Logstash, and Agents
+xpack.security.http.ssl:
+  enabled: true
+  verification_mode: certificate
+  keystore.path: certs/master-worker1.p12
+  keystore.password: "Necessary87215"
+  certificate_authorities: [ "/home/konect/els1/config/certs/ca-cert.pem" ]
+# Enable encryption and mutual authentication between cluster nodes
+xpack.security.transport.ssl:
+  enabled: true
+  verification_mode: certificate
+  keystore.path: certs/master-worker1.p12
+  keystore.password: "Necessary87215"
+  certificate_authorities: [ "/home/konect/els1/config/certs/ca-cert.pem" ]
+```
 
 You can use this execute file to introduce `.p12` password to Elasticsearch:
 
