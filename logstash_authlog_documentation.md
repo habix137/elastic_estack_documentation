@@ -90,7 +90,7 @@ output {
 
 To send `/var/log/auth.log` to Logstash over TCP, configure `rsyslog`:
 
-1. Create a file `/etc/rsyslog.d/60-logstash.conf`:
+1. Create a file `/etc/rsyslog.d/60-logstash.conf` or edit `/etc/rsyslog.conf`:
 
 ```bash
 auth,authpriv.*  @@213.233.184.217:5000
